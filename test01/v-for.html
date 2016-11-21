@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>v-for</title>
+<script src="https://unpkg.com/vue/dist/vue.js"></script>
+</head>
+<body>
+<div id="app_4">
+    <ul>
+        <li v-for = "todo in todos">
+            {{ todo.text }}
+        </li>
+    </ul>
+</div> 
+</body>
+<script>
+/*
+* 循环
+* 语法：在要循环显示的DOM元素上 v-for = "item in items"
+* 注意：在控制台输入app4.todos.push({ text: 'new item' })列表添加了一条新内容, 打印结果是4;
+*      继续输入app4.todos.push({ text: 'new item' })列表又添加了一条新内容, 打印结果是5;
+*      说明返回的是循环列表的长度！
+*/
+var app4 = new Vue({
+    el: '#app_4',
+    data: {
+        todos: [
+            { text: '我是第一条' },
+            { text: '我是第二条' },
+            { text: '我是第三条' }
+        ]
+    }
+});
+</script>
+</html>

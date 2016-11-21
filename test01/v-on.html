@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>v-on</title>
+<script src="https://unpkg.com/vue/dist/vue.js"></script>
+</head>
+<body>
+<div id="app_5">
+    <p>{{ message }}</p>
+    <button v-on:click="reverseMessage">Reverse Message</button>
+</div>
+</body>
+<script>
+/*
+* 事件绑定
+* 语法：v-on:事件名 = “事件函数” 绑定Vue实例中methods中的事件函数
+*      函数中的this 指向实例化的对象本身
+*/
+var app5 = new Vue({
+    el: '#app_5',
+    data: {
+        message: 'Hello vue.js'
+    },
+    methods: {
+        reverseMessage: function () {
+            console.info(this, app5); // 相同
+            this.message = this.message.split('').reverse().join('');
+        }
+    }
+});
+</script>
+</html>

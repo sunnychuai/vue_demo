@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>hello world</title>
+<script src="https://unpkg.com/vue/dist/vue.js"></script>
+</head>
+<body>
+<div id="app">
+    {{ message }}
+</div>
+</body>
+<script>
+/*
+* 声明式渲染
+* vue.js 的核心是允许采用简洁的模板语法来声明式的将数据渲染进DOM系统
+* 此处 声明了一个变量message 实例化了Vue对象，并绑定到id为app的元素，数据对象为 {message: 'hello world!'}
+* 实现了数据绑定
+*/
+var app = new Vue({
+    el : '#app',
+    data: {
+        message: 'hello world!'
+    }
+});
+</script>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>v-model</title>
+<script src="https://unpkg.com/vue/dist/vue.js"></script>
+</head>
+<body>
+<div id="app_6">
+    <p>{{ message }}</p>  
+    <input type="text" v-model="message">
+</div>
+</body>
+<script>
+/*
+* 双向数据绑定
+* 语法：v-model=""
+* 含义：在表单输入和应用状态中做双向数据绑定
+*/
+var app6 = new Vue({
+    el: '#app_6',
+    data: {
+        message: 'Hello Vue!'
+    }
+});
+</script>
+</html>

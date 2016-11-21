@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>v-if</title>
+<script src="https://unpkg.com/vue/dist/vue.js"></script>
+</head>
+<body>
+<div id="app_3">
+    <p v-if="seen">Now you see me!</p>
+</div>  
+</body>
+<script>
+/*
+* 条件绑定
+* 语法： v-if = "seen"
+* 含义：如果满足条件，该节点将实现什么
+* 注意：实际这个例子中，如果在控制台输入app3.seen = false; p元素在DOM中是被删除的 取代的是一行注释 <!---->
+*/
+var app3 = new Vue({
+    el: '#app_3',
+    data: {
+        seen: true
+    }
+});
+</script>
+</html>

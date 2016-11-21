@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>构造器</title>
+<script src="https://unpkg.com/vue/dist/vue.js"></script>
+</head>
+<body>
+</body>
+<script>
+/*
+* 通过构造函数Vue创建一个 `Vue的根实例` 启动
+* 在实例化 Vue 时，需要传入一个选项对象，它可以包含数据data、模板template、挂载元素el、方法methods、生命周期钩子等选项
+*/
+var vm = new Vue({
+    // 选项
+});
+
+/*
+* 可以扩展Vue构造函数，从而用预定义选项创建可复用的组件构造器
+*/
+var MyComponent = Vue.extent({
+    // 扩展选项
+});
+// 所有的 `MyComponent` 实例都将以预定义的扩展选项被创建
+var mycomponentInstanse = new MyComponent();
+
+//总结：尽管可以`命令式地创建扩展实例`，不过在多数情况下建议将组件构造器注册为一个自定义元素，然后`声明式`地用在模板中。
+</script>
+</html>

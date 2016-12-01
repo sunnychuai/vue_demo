@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>绑定属性</title>
+<script src="../libs/vue.js"></script>
+</head>
+<body>
+<div id="example">   
+    <!--v-bind指令绑定属性-->
+    <div v-bind:id="dynamicId"></div>
+
+    <!--布尔值的属性也有效 —— 如果条件被求值为 false 的话该属性会被移除-->
+    <button v-bind:disabled="someDynamicCondition">我是个按钮</button>
+</div>
+</body>
+<script>
+var vm = new Vue({
+    el: '#example',
+    data: {
+        dynamicId: 'test',
+        someDynamicCondition: true
+    }
+});
+</script>
+</html>

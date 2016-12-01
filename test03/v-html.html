@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>v-html</title>
+<script src="../libs/vue.js"></script>
+</head>
+<body>
+    <div id="test" v-html="rawHtml"></div>
+</body>
+<script>
+/*
+* v-html指令：将数据输出真正的HTML--数据绑定会被忽略
+* 注意：不能使用v-html来复合局部模板，因为Vue不是基于字符串的模板引擎。
+*      请对可信的内容使用HTML插值，绝不要对用户提供的内容插值。
+*/
+var vm = new Vue({
+    el: '#test',
+    data: {
+        rawHtml: '<p>hello world!</p>'
+    }
+});
+</script>
+</html>

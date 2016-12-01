@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>绑定 javascript 表达式</title>
+    <script src="../libs/vue.js"></script>
+</head>
+<body>
+<div id="example">
+    <div>{{ number + 1 }}</div>
+    <div>{{ ok ? 'YES' : 'NO' }}</div>
+    <div>{{ message.split('').reverse().join('') }}</div>
+    <ul v-for="item in ids">
+        <li v-bind:id="'list-' + id">{{'list-'+ item.idname}}</li>
+    </ul>
+</div>
+<script>
+/*
+* 绑定javascript表达式
+*/
+
+var vm = new Vue({
+    el: '#example',
+    data: {
+        number: 2,
+        ok: false,
+        message: 'hello world',
+        ids: [
+            {idname: 'first'},
+            {idname: 'second'},
+            {idname: 'third'},
+            {idname: 'four'},
+            {idname: 'five'}
+        ]
+    }
+});
+</script>
+</body>
+</html>

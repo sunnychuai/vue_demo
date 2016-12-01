@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>v-once</title>
+<script src="../libs/vue.js"></script>
+</head>
+<body>
+<div id="example">
+    <span>Message: {{msg}}</span><br/>
+    <span v-once>this will never change: {{msg}}</span>
+</div>
+<script>
+/*
+* 插值<文本>  Mustache 语法（双大括号）文本插值
+* 无论何时，绑定的数据对象上msg属性发生可改变，插值处的内容都会更新
+* v-once指令，执行一次性地插值，即：当数据改变时，插值处的内容不会更新。但这会影响到该节点上所有的数据绑定
+*/
+var vm = new Vue({
+    el: '#example',
+    data: {
+        msg: '绑定文本'
+    }
+});
+</script>
+</body>
+</html>
